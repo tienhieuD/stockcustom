@@ -16,6 +16,7 @@
         'data/report_paperformat.xml',
         'views/report_templates.xml',
         'views/saleorder_report_view.xml',
+        'report/sale_report_template.xml',
     ],
     'demo': [],
     'qweb': [],
