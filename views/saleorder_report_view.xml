@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record model="ir.actions.report" id="sale.action_report_saleorder">
+        <field name="paperformat_id" ref="stockcustom.custom_a5_format" />
+    </record>
+
+    </data>
+</odoo>

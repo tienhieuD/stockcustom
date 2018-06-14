@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="web.external_layout_standard">
+            <div class="header">
+                <!--<div class="row">-->
+                    <!--<div class="col-xs-3 mb4">-->
+                        <!--<img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" style="max-height: 45px;"/>-->
+                    <!--</div>-->
+                    <!--<div class="col-xs-9 text-right" style="margin-top:22px;" t-field="company.report_header" name="moto"/>-->
+                <!--</div>-->
+                <div class="row">
+                    <div class="col-xs-6" name="company_address">
+                        <div t-field="company.partner_id"/>
+                        <span t-field="company.street"/>
+                        <span t-field="company.street2"/>
+                        <span t-field="company.city"/>
+                        <span t-field="company.country_id"/>
+                        <div t-field="company.company_registry"/>
+                        <span>Điện thoại: </span><span t-field="company.phone"/>
+                        <span style="padding:0 5px"/>
+                        <span>Website: </span><span t-field="company.website"/>
+                        <div style="border-bottom: 1px solid black;"/>
+                    </div>
+                </div>
+                <!--<div t-if="company.logo or company.report_header" class="row zero_min_height">-->
+                    <!--<div class="col-xs-6">-->
+                        <!--<div style="border-bottom: 1px solid black;"/>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+
+            <div class="article o_report_layout_standard">
+                <t t-raw="0" />
+            </div>
+
+            <div class="footer">
+                <div class="text-center" style="border-top: 1px solid black;">
+                    <ul class="list-inline mb4">
+                        <li t-if="company.phone">Phone: <span t-field="company.phone"/></li>
+                        <li t-if="company.email">Email: <span t-field="company.email"/></li>
+                        <li t-if="company.website">Web: <span t-field="company.website"/></li>
+                        <li t-if="company.vat"><t t-esc="company.country_id.vat_label or 'TIN'"/>: <span t-field="company.vat"/></li>
+                    </ul>
+
+                    <div name="financial_infos">
+                        <span t-field="company.report_footer"/>
+                    </div>
+
+                    <div class="text-muted">
+                        Page: <span class="page"/> / <span class="topage"/>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>
