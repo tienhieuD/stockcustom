@@ -13,3 +13,8 @@ class ReturnPicking(models.TransientModel):
             for line in res.get('product_return_moves'):
                 line[2]['to_refund'] = True
         return res
+class SaleOrder(models.Model):
+    _inherit = 'sale.order'
+    _sql_constraints = {
+        ('client_order_ref_uniq', 'unique(client_order_ref)', 'Customer Reference không được trùng')
+    }
